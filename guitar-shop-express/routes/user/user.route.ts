@@ -1,4 +1,4 @@
-
+import { User } from "../../models/users.model";
 import { Router } from "express";
 
 const users =[{
@@ -8,12 +8,18 @@ const users =[{
 
 }];
 export const user = Router()
-user.get("/user/:email", (req, res) =>{
-    const params=req.params
-    const user = users.find(user => user.email === params.email) 
-    return res.json({user})
+user.get("/user/:email", async (req, res) =>{
     
+try{const params=req.params
+    const user = await User.create({  email: 'asdv' });
+    
+    return res.json({user})}catch(error){
+        return res.json({error}) 
+    }
+    
+        
 })
+
 
 user.delete("/user/:email", (req, res) =>{
 const params=req.params

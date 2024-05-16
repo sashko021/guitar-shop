@@ -1,7 +1,7 @@
 import express, {Application, json, Request, Response} from "express";
 import { user } from "./routes/user/user.route";
 const cors = require("cors");
-
+import "./database"
 
 const app: Application = express();
 
