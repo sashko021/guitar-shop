@@ -20,9 +20,11 @@ function Product () {
                 <Link to={'/products/'} className={style.link}>
                 <div className={style.products}>
                     <img className={style.img} key={photo.id} src={photo.image}/>
-                    <p>{photo.description}</p>
-                    <p>{photo.name}</p>
-                    <p className={style.price}>{photo.price}</p>
+                    <div className={style.paragraph}>
+                        <p>{photo.description}</p>
+                        <p>{photo.name}</p>
+                        <p className={style.price}>{photo.price}</p>
+                    </div>
                 </div>
                 </Link>
             ))}
