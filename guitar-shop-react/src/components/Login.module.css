@@ -25,6 +25,17 @@ input {
 }
 .login {
     margin-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.sub {
+    margin-left: 33%;
+    margin-top: 50px;
+    height: 50px;
+    width: 200px;
+    color: orangered;
+    background-color: #1F232E;
+    border-radius: 10px;
 }
 .txt {
     font-size: 50px;
