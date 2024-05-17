@@ -1,20 +1,18 @@
+import { User } from "../../models/users.model";
 import { Router } from "express";
 
-const users =[{
-    email: "ivan@mail.bg",
-    id: 335
-},{
 
-}];
 export const user = Router()
-user.get("/user/:email", (req, res) =>{
-    const params=req.params
-    const user = users.find(user => user.email === params.email) 
-    return res.json({user})
+user.post("/user", async (req, res) =>{
     
+try{const params=req.body
+    const user = await User.create(params);
+    
+    return res.json({user})}catch(error){
+        return res.json({error}) 
+    }
+    
+        
 })
 
-user.delete("/user/:email", (req, res) =>{
-const params=req.params
 
-})
