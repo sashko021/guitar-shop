@@ -1,0 +1,27 @@
+.display {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+}
+.products {
+    width: 180px;
+    margin-left: 50px;
+    margin-top: 30px;
+    border-radius: 13px;
+    align-items: center;
+    padding: 10px;
+    text-align: center;
+    font-family: cursive;
+    height: 370px;
+    padding-top: 0px;
+}
+
+.img {
+    width: 160px;
+    height: 200px;
+    border-radius: 10px;
+    margin-bottom: -20px;
+}
+.price {
+    color: #104713;
+}
