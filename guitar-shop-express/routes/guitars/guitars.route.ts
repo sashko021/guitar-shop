@@ -1,18 +1,34 @@
 import express, { Router } from 'express';
+import { Guitar } from '../../models/guitars.model';
 
 
 export const guitar = Router();
 
-guitar.get("/guitars", (req,res)  => {
+guitar.get("/guitars/:id",async (req,res)  => {
 
-    res.send("Hi, I'm a gitar!");
+    try{const params=req.params
+       
+        const guitar = await Guitar.findByPk(params.id)
+        
+        return res.json({guitar})}catch(error){
+            return res.json({error}) 
+        }
 })
-guitar.post("/guitars", (req,res) =>{
-    res.send("Hi, I'm a gitar!");
+guitar.get("/guitars",async (req,res)  => {
+
+    try{
+        const guitar = await Guitar.findAll()
+        
+        return res.json({guitar})}catch(error){
+            return res.json({error}) 
+        }
 })
-guitar.put("/guitars", (req,res) =>{
-    res.send("Hi, I'm a gitar!");
-})
-guitar.delete("/guitars", (req,res) =>{
-    res.send("Hi, I'm a gitar!");
+guitar.post("/guitars",async (req,res) =>{
+    try{const params=req.body
+        console.log(params)
+        const guitar = await Guitar.create(params);
+        
+        return res.json({guitar})}catch(error){
+            return res.json({error}) 
+        }
 })

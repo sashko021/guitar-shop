@@ -1,5 +1,5 @@
 import { Sequelize } from "sequelize";
-import { User } from "./models/users.model";
+
 export const sequelize = new Sequelize({
     
        

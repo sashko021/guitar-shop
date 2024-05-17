@@ -1,8 +1,7 @@
 
 import { Model, DataTypes } from 'sequelize';
 import {sequelize} from '../database'; // Importing the Sequelize instance
-import { allowedNodeEnvironmentFlags } from 'process';
-import { AllowNull } from 'sequelize-typescript';
+
 
 export class Guitar extends Model {
   public GuitarID!: number;  // Non-null assertion to satisfy TypeScript
@@ -48,8 +47,8 @@ Guitar.init({
   }
 
 }, {
-  sequelize, // Passing the sequelize instance here
+  sequelize, 
   tableName: 'Guitars',
-  modelName: 'Guitar' // Optional, defaults to the name of the class
+  modelName: 'Guitar' 
 });
 
