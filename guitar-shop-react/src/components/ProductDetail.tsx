@@ -13,7 +13,8 @@ function ProductDetail() {
             .then((data) => {
                 console.log(productId);
                 setProduct(data.find((item) => item.id === productId))
-            }).catch((error) => console.log(error));
+            })
+            .catch((error) => console.log(error));
     }, []);
 
     return (

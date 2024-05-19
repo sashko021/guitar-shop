@@ -10,10 +10,25 @@ function Login() {
         const {value} = event.target;
         setFormData((prevFormData) => ({...prevFormData, Uname: value}));
     };
+    const [user, setUser]= useState({})
     const handleSubmit = (event) => {
         event.preventDefault();
-        setCookie('user',formData.Uname,{path:`/`});
+        
+        fetch('http://localhost:3004/user',{method: 'POST', // Specify the method
+        headers: {
+            'Content-Type': 'application/json' // Set the content type header so that the server knows to expect JSON
+        },
+        body: JSON.stringify(formData)})
+            .then((res) => {
+                return res.json();
+            })
+            .then((data) => {
+                console.log(data);
+                setUser(data);
+                setCookie('user',formData.Uname,{path:`/`});
         navigate(`/`)
+            });
+            
     };
         return (
             <div className={style.maindiv}>

@@ -4,23 +4,28 @@
     gap: 10px;
 }
 .products {
-    width: 160px;
+    width: 200px;
     margin-left: 50px;
     margin-top: 30px;
     align-items: center;
     padding: 10px;
     text-align: center;
     font-family: cursive;
-    height: 370px;
+    height: 380px;
     padding-top: 0px;
     background-color: white;
+    margin-bottom: 20px;
 }
-
+.products:hover {
+    background-color: #F0F0F0;
+    color: black;
+}
 .img {
     width: 160px;
     height: 200px;
     border-radius: 15px;
     margin-bottom: -20px;
+    margin-top: 10px;
 }
 .price {
     color: #104713;
@@ -28,9 +33,4 @@
 .paragraph {
     height: 179px;
     width: 100%;
-}
-.paragraph:hover {
-    background-color: #AFF5F8;
-    color: black;
-    border-radius: 27px;
 }
